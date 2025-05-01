@@ -1,191 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zunairah World</title>
-  <style>
-    :root {
-      --emerald: #013220;
-      --cream: #FFFDD0;
-      --accent: #FFB703;
-    }
-    body {
-      font-family: "Arial", sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--emerald);
-      color: var(--cream);
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 2rem 0;
-      background-color: var(--emerald);
-      border-bottom: 2px solid var(--accent);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      border-radius: 10px;
-      background-color: var(--emerald);
-      border: 1px solid var(--accent);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-    section h2 {
-      text-align: center;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-    }
-    .social-links {
-      text-align: center;
-      margin: 1rem 0;
-    }
-    .social-links a {
-      text-decoration: none;
-      color: var(--accent);
-      font-weight: bold;
-      margin: 0 10px;
-    }
-    .upload-section, .community {
-      text-align: center;
-    }
-    .upload-section input[type="file"] {
-      margin: 0.5rem auto;
-      display: block;
-    }
-    .community textarea {
-      width: 90%;
-      max-width: 700px;
-      height: 100px;
-      margin-bottom: 1rem;
-      padding: 10px;
-      border: 1px solid var(--accent);
-      border-radius: 5px;
-      background-color: var(--emerald);
-      color: var(--cream);
-      resize: none;
-    }
-    button {
-      padding: 0.7rem 2rem;
-      border: none;
-      border-radius: 5px;
-      background-color: var(--accent);
-      color: var(--emerald);
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: var(--cream);
-      color: var(--emerald);
-    }
-    .community-posts {
-      margin-top: 1rem;
-    }
-    .community-posts p {
-      background-color: var(--emerald);
-      border: 1px solid var(--accent);
-      border-radius: 5px;
-      padding: 10px;
-      margin: 0.5rem 0;
-      text-align: left;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      background-color: var(--emerald);
-      border-top: 1px solid var(--accent);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zunairah World</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>Zunairah World</h1>
-  </header>
+    <header>
+        <h1>Zunairah World</h1>
+        <p>Welcome to my space of creativity: Poems, Novels, and Thoughts!</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#poems">Poems</a></li>
+            <li><a href="#novels">Novels</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#admin">Admin Panel</a></li>
+        </ul>
+    </nav>
+    <main>
+        <!-- ABOUT ME -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Zunairah. Welcome to my world of words and ideas.</p>
+            <div class="social-links">
+                <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+                <a href="https://pinterest.com/yourprofile" target="_blank">Pinterest</a>
+                <a href="https://wattpad.com/yourprofile" target="_blank">Wattpad</a>
+            </div>
+        </section>
 
-  <!-- Bio Section -->
-  <section>
-    <h2>About Me</h2>
-    <p>Welcome to my little corner of the web! This is where I share my thoughts, poems, and novels. Stay connected and explore my creative world.</p>
-  </section>
+        <!-- POEMS SECTION -->
+        <section id="poems">
+            <h2>Poems</h2>
+            <div id="poem-list">
+                <p>Newly uploaded poems will appear here.</p>
+            </div>
+        </section>
 
-  <!-- Social Media Links Section -->
-  <section>
-    <h2>Connect with Me</h2>
-    <div class="social-links">
-      <a href="https://instagram.com/zunairahworld" target="_blank">Instagram</a>
-      <a href="https://pinterest.com/zunairahworld" target="_blank">Pinterest</a>
-      <a href="https://wattpad.com/user/zunairahworld" target="_blank">Wattpad</a>
-    </div>
-  </section>
+        <!-- NOVELS SECTION -->
+        <section id="novels">
+            <h2>Novels</h2>
+            <div id="novel-list">
+                <p>Newly uploaded novel chapters will appear here.</p>
+            </div>
+        </section>
 
-  <!-- Poems Section -->
-  <section>
-    <h2>Poems</h2>
-    <div class="upload-section">
-      <input type="file" id="poemUpload" accept=".txt,.doc,.pdf" />
-      <button onclick="uploadFile('poemUpload')">Upload Poem</button>
-    </div>
-  </section>
+        <!-- COMMUNITY SECTION -->
+        <section id="community">
+            <h2>Community</h2>
+            <div id="qa">
+                <h3>Q&A Section</h3>
+                <p>Ask questions and get answers from the community.</p>
+                <div id="qa-list">
+                    <!-- Q&A threads will be dynamically loaded here -->
+                </div>
+            </div>
+            <div id="thoughts">
+                <h3>Thoughts</h3>
+                <p>Share your thoughts, and let the community reply.</p>
+                <div id="thoughts-list">
+                    <!-- Thoughts will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
 
-  <!-- Novels Section -->
-  <section>
-    <h2>Novels</h2>
-    <div class="upload-section">
-      <input type="file" id="novelUpload" accept=".txt,.doc,.pdf" />
-      <button onclick="uploadFile('novelUpload')">Upload Chapter</button>
-    </div>
-  </section>
-
-  <!-- Community Section -->
-  <section class="community">
-    <h2>Write Your Mind</h2>
-    <textarea id="communityPost" placeholder="Share your thoughts like a tweet..."></textarea>
-    <button onclick="postThought()">Post</button>
-    <div class="community-posts" id="communityPosts">
-      <!-- Thoughts will appear here -->
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Zunairah World. All rights reserved.
-  </footer>
-
-  <script>
-    // Function to simulate file upload
-    function uploadFile(inputId) {
-      const fileInput = document.getElementById(inputId);
-      if (fileInput.files.length > 0) {
-        alert(`File "${fileInput.files[0].name}" uploaded successfully!`);
-        fileInput.value = ""; // Clear the input after upload
-      } else {
-        alert("No file selected. Please choose a file to upload.");
-      }
-    }
-
-    // Function to post thoughts to the community
-    function postThought() {
-      const textarea = document.getElementById("communityPost");
-      const postsContainer = document.getElementById("communityPosts");
-      const thought = textarea.value.trim();
-
-      if (thought) {
-        const post = document.createElement("p");
-        post.textContent = thought;
-        postsContainer.prepend(post); // Add the new post at the top
-        textarea.value = ""; // Clear the textarea
-      } else {
-        alert("Please write something before posting.");
-      }
-    }
-  </script>
+        <!-- ADMIN PANEL -->
+        <section id="admin">
+            <h2>Admin Panel</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="poems">Poems</option>
+                    <option value="novels">Novels</option>
+                </select>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Enter title" required>
+                <label for="file">Upload File:</label>
+                <input type="file" id="file" name="file" accept=".txt,.docx,.pdf" required>
+                <button type="button" id="upload-btn">Upload</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Zunairah World. All rights reserved.</p>
+    </footer>
 </body>
 </html>
+   
+      
+    
+    
+      
